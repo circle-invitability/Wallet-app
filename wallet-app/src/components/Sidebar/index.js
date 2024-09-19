@@ -1,36 +1,39 @@
 import React from 'react';
-import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink, SidebtnWrap, SidebarLink } from './SidebarElements';
+import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarRoute, SidebtnWrap, SideBarLink } from './SidebarElements';
 
 
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggle }) => {
   return (
-      <SidebarContainer>
-        <Icon>
+      <SidebarContainer isOpen={isOpen} onClick={toggle}>
+        <Icon onClick={toggle}>
           <CloseIcon />
         </Icon>
         <SidebarWrapper>
           <SidebarMenu>
-            <SidebarLink to='about'>
+            <SideBarLink to='about' onClick={toggle}>
              About
-            </SidebarLink>
-            <SidebarLink to='discover'>
+            </SideBarLink>
+            <SideBarLink to='discover' onClick={toggle}>
              Discover
-            </SidebarLink>
-            <SidebarLink to='service'>
+            </SideBarLink>
+            <SideBarLink to='service' onClick={toggle}>
              Services
-            </SidebarLink>
-            <SidebarLink to='signup'>
+            </SideBarLink>
+            <SideBarLink to='signup' onClick={toggle}>
              Sign Up
-            </SidebarLink>
+            </SideBarLink>
           </SidebarMenu>
           
           <SidebtnWrap>
-          <SidebarRoute to='signin'>Sign In</SidebarRoute>
-          </SidetnWrap>
+          <SidebarRoute to='signin'>
+            Sign In
+            </SidebarRoute>
+          </SidebtnWrap>
+
         </SidebarWrapper>
       </SidebarContainer>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;
