@@ -11,3 +11,5 @@ so for this project time assigned is 2 weeks and all new things learnth and obse
 2. then i installed the mysql in the terminal by downloading the sql repo from the mysql site in the form of .deb file in debian book work
 
 3. things to learn squalise;
+
+4. i took a express js route course <https://www.youtube.com/watch?v=0Hu27PoloYw&list=PLpPqplz6dKxXn6oItzG3rfR8fWxxQJPk9>
