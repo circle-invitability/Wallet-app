@@ -4,32 +4,40 @@ import './App.css'
 
 function App() {
 
-  const [listOfPosts, setlistOfPosts] = useState(0)
+  const [listOfPosts, setlistOfPosts] = useState();
 
   useEffect(() => {
     axios.get("http://localhost:3001/posts").then((response) => {
+       setlistOfPosts(response.data);
+      
 
-      setlistOfPosts(response.data)
-      console.og
     })
-  }, [])
+  }, []);
 
- const Posts = listOfPosts
-console.log(Posts)
-  return (
+  
+
+ console.log(listOfPosts);
+ //console.log(postings[1].title);
+// console.log(postings[2].title);
+
+ return (
     <>
       <div className='App'>
-        {Posts.map((value, key) => {
+        {listOfPosts.map((value, key) => {
           return (
             <>
-              <div className='title'>{value.title}</div>
+            <div className='post'>
+              <div className='title'> {value.title}</div>
+               <div className='body'> {value.postTitle}</div>
+                <div className='footer'> {value.username}</div>
+              </div>
             </>
           )
         })}
       </div>
 
     </>
-  )
+  ) 
 }
 
 export default App
