@@ -1,43 +1,22 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { BrowserRouter as Router, Route, Routes, Link,} from 'react-router-dom'
 import './App.css'
+import Home from'./pages/Home'
+
 
 function App() {
+     return(
+      <>
 
-  const [listOfPosts, setlistOfPosts] = useState();
+     <div className="App">
+    <Router>
+    <Routes>
+    <Route path="/" exact Component={Home} />
+    </Routes>
+    </Router>
 
-  useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
-       setlistOfPosts(response.data);
-      
-
-    })
-  }, []);
-
-  
-
- console.log(listOfPosts);
- //console.log(postings[1].title);
-// console.log(postings[2].title);
-
- return (
-    <>
-      <div className='App'>
-        {listOfPosts.map((value, key) => {
-          return (
-            <>
-            <div className='post'>
-              <div className='title'> {value.title}</div>
-               <div className='body'> {value.postTitle}</div>
-                <div className='footer'> {value.username}</div>
-              </div>
-            </>
-          )
-        })}
-      </div>
-
-    </>
-  ) 
+  </div>
+  </>
+  )
 }
 
 export default App
