@@ -26,7 +26,7 @@ return (
             
             <div className='post'>
               <div className='title' key={value.title}> {value.title}</div>
-               <div className='body'key={value.postTitle}> {value.postTitle}</div>
+               <div className='body'key={value.postText}> {value.postText}</div>
                 <div className='footer'key={value.username}> {value.username}</div>
               </div>
             
